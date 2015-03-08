@@ -1,0 +1,19 @@
+
+
+
+
+
+.build/uno/src/Marlin.cpp : src/Marlin.ino
+	@mkdir -p .build/uno/src
+	@echo [93msrc/Marlin.ino[0m
+	@/usr/local/Cellar/ino/0.3.6/libexec/bin/ino preproc  -o $@ $^
+
+.build/uno/src/Marlin.cpp : src/Marlin.pde
+	@mkdir -p .build/uno/src
+	@echo [93msrc/Marlin.pde[0m
+	@/usr/local/Cellar/ino/0.3.6/libexec/bin/ino preproc  -o $@ $^
+
+
+all : .build/uno/src/Marlin.cpp .build/uno/src/Marlin.cpp
+	@true
+
